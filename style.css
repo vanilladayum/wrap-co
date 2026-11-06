@@ -20,19 +20,6 @@ img {
 a {
   text-decoration: none;
 }
-/* Wrap wide tables in <div class="table-scroll"> to scroll on small screens */
-.table-scroll {
-  max-width: 100%;
-  overflow-x: auto;
-}
-input[type="text"],
-input[type="number"],
-input[type="password"],
-textarea {
-  max-width: 100%;
-  padding: 8px;
-  font-size: 1em;
-}
 
 /* Container */
 .container {
@@ -83,13 +70,14 @@ header .action-links a.btn-primary {
   white-space: nowrap;
 }
 
-/* Hamburger button (hidden on desktop) */
+/* Hamburger: the checkbox is always hidden, the three lines only show on phones */
+.nav-toggle {
+  display: none !important;
+}
 .nav-toggle-label {
   display: none;
   cursor: pointer;
   padding: 12px 6px;
-  background: none;
-  border: 0;
 }
 .nav-toggle-label span,
 .nav-toggle-label span::before,
@@ -144,7 +132,6 @@ header .action-links a.btn-primary {
   padding: 60px 20px;
   text-align: center;
 }
-.menu-list h1,
 .menu-list h2 {
   font-size: clamp(1.5rem, 5vw, 2rem);
   margin-bottom: 30px;
@@ -211,7 +198,7 @@ header .action-links a.btn-primary {
   position: absolute;
   top: -14px;
   left: 20px;
-  background: #b35f00;
+  background: #fd9000;
   color: #fff;
   padding: 6px 16px;
   border-radius: 20px;
@@ -232,7 +219,7 @@ header .action-links a.btn-primary {
 .specialty-price {
   font-size: 1.6em;
   font-weight: bold;
-  color: #b35f00;
+  color: #fd9000;
   margin-bottom: 15px;
 }
 .specialty-info .btn-primary {
@@ -249,7 +236,6 @@ header .action-links a.btn-primary {
   background: #f0f0f0;
   text-align: center;
 }
-.offers h1,
 .offers h2 {
   font-size: clamp(1.5rem, 5vw, 2rem);
   margin-bottom: 30px;
@@ -267,6 +253,51 @@ header .action-links a.btn-primary {
   border: 1px solid #ddd;
   padding: 20px;
   border-radius: 8px;
+}
+
+/* Contact Page */
+.contact-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+.contact-section h2 {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  margin-bottom: 10px;
+  color: #b8321d;
+}
+.contact-intro {
+  margin-bottom: 30px;
+}
+.contact-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+.contact-card {
+  flex: 1 1 260px;
+  background: #fff;
+  border: 2px solid #b8321d;
+  border-radius: 10px;
+  padding: 25px 20px;
+}
+.contact-card h3 {
+  margin-bottom: 5px;
+}
+.contact-card p {
+  margin-bottom: 15px;
+}
+.contact-card .btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #b8321d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
 }
 
 /* Footer */
@@ -307,7 +338,7 @@ footer a {
     height: 50px;
   }
 
-  /* Show hamburger, hide menu until tapped */
+  /* Show the hamburger, hide the menu until it is tapped */
   .nav-toggle-label {
     display: block;
   }
@@ -316,8 +347,8 @@ footer a {
     display: none;
     width: 100%;
   }
-  header .main-nav.open,
-  header .main-nav.open ~ .action-links {
+  .nav-toggle:checked ~ .main-nav,
+  .nav-toggle:checked ~ .action-links {
     display: block;
   }
   header .main-nav ul {
@@ -341,7 +372,8 @@ footer a {
   }
 
   .menu-list,
-  .offers {
+  .offers,
+  .contact-section {
     padding: 45px 15px;
   }
   .specialty-card {
@@ -380,122 +412,4 @@ footer a {
   footer .container {
     font-size: 0.9em;
   }
-}
-
-/* Contact Page */
-.contact-section {
-  padding: 60px 20px;
-  text-align: center;
-}
-.contact-section h1 {
-  font-size: clamp(1.5rem, 5vw, 2rem);
-  margin-bottom: 10px;
-  color: #b8321d;
-}
-.contact-intro {
-  margin-bottom: 30px;
-}
-.contact-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  max-width: 800px;
-  margin: 0 auto 40px;
-}
-.contact-card {
-  flex: 1 1 260px;
-  background: #fff;
-  border: 2px solid #b8321d;
-  border-radius: 10px;
-  padding: 25px 20px;
-}
-.contact-card h3 {
-  margin-bottom: 5px;
-}
-.contact-card p {
-  margin-bottom: 15px;
-}
-.contact-card .btn-primary,
-.contact-form-box .btn-primary {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #b8321d;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 1em;
-  cursor: pointer;
-}
-.contact-form-box {
-  max-width: 600px;
-  margin: 0 auto;
-  background: #f8f8f8;
-  border-radius: 10px;
-  padding: 25px 20px;
-  text-align: left;
-}
-.contact-form-box h2 {
-  text-align: center;
-  margin-bottom: 15px;
-}
-.contact-form-box label {
-  display: block;
-  font-weight: bold;
-  margin: 12px 0 4px;
-}
-.contact-form-box input,
-.contact-form-box textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-family: inherit;
-  font-size: 1em;
-}
-.contact-form-box button {
-  margin-top: 18px;
-  width: 100%;
-}
-.form-success {
-  background: #e6f4ea;
-  color: #1e6b34;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  text-align: center;
-}
-.form-error {
-  background: #fdecea;
-  color: #b8321d;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-/* Accessibility */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-  outline: 3px solid #1a5fb4;
-  outline-offset: 2px;
-}
-.skip-link {
-  position: absolute;
-  left: -9999px;
-  top: 0;
-  background: #fff;
-  color: #b8321d;
-  padding: 10px 16px;
-  font-weight: bold;
-  z-index: 200;
-}
-.skip-link:focus {
-  left: 10px;
-  top: 10px;
-}
-@media (prefers-reduced-motion: reduce) {
-  * { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
 }
