@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menu - Wrap.Co</title>
   <link rel="icon" href="images/wrap_co_logo_transparent.png">
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 <header>
@@ -23,10 +23,11 @@
         <li><a href="menu.html">Menu</a></li>
         <li><a href="offers.html">Offers</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart <span class="cart-count">0</span></a></li>
       </ul>
     </nav>
     <div class="action-links">
-      <a href="contact.html" class="btn btn-primary">Order Now</a>
+      <a href="menu.html" class="btn btn-primary">Order Now</a>
     </div>
   </div>
 </header>
@@ -39,9 +40,10 @@
       <div class="menu-card">
         <img src="images/chicken_wrap.jpg" alt="Rollin' N Crispy chicken wrap with fries">
         <h3>Rollin' N Crispy</h3>
-        <p>Chicken Wrap with Fries. Add on: Cheese Sauce $0.50</p>
+        <p>Chicken Wrap with Fries</p>
         <p>$3.50</p>
-        <a href="tel:+6738907816" class="btn btn-outline">Call to Order</a>
+        <button type="button" class="btn btn-primary add-to-cart" data-id="wrap">Add to Cart</button>
+        <button type="button" class="btn btn-outline add-to-cart" data-id="cheese">+ Cheese Sauce $0.50</button>
       </div>
 
       <div class="menu-card">
@@ -49,7 +51,7 @@
         <h3>The Co.Bites (S)</h3>
         <p>Crispy Potato Bites - 10 pcs</p>
         <p>$1.50</p>
-        <a href="tel:+6738907816" class="btn btn-outline">Call to Order</a>
+        <button type="button" class="btn btn-primary add-to-cart" data-id="bites_s">Add to Cart</button>
       </div>
 
       <div class="menu-card">
@@ -57,7 +59,7 @@
         <h3>The Co.Bites (M)</h3>
         <p>Crispy Potato Bites - 15 pcs</p>
         <p>$2.00</p>
-        <a href="tel:+6738907816" class="btn btn-outline">Call to Order</a>
+        <button type="button" class="btn btn-primary add-to-cart" data-id="bites_m">Add to Cart</button>
       </div>
 
       <div class="menu-card">
@@ -65,10 +67,11 @@
         <h3>The Co.Bites (L)</h3>
         <p>Crispy Potato Bites - 20 pcs</p>
         <p>$2.50</p>
-        <a href="tel:+6738907816" class="btn btn-outline">Call to Order</a>
+        <button type="button" class="btn btn-primary add-to-cart" data-id="bites_l">Add to Cart</button>
       </div>
 
     </div>
+    <p style="margin-top:30px;"><a href="cart.html" class="btn btn-ghost">View Cart and Checkout</a></p>
   </section>
 </main>
 
@@ -80,5 +83,6 @@
     <p>&copy; 2026 Wrap.Co. All Rights Reserved.</p>
   </div>
 </footer>
+<script src="script.js?v=7" defer></script>
 </body>
 </html>

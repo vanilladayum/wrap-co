@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Order - Wrap.Co</title>
+  <link rel="icon" href="images/wrap_co_logo_transparent.png">
+  <link rel="stylesheet" href="style.css?v=7">
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="logo">
+      <a href="index.html"><img src="images/wrap_co_logo_transparent.png" alt="Wrap.Co logo" height="65"></a>
+    </div>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" style="display:none;">
+    <label for="nav-toggle" class="nav-toggle-label" aria-label="Open menu"><span></span></label>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="offers.html">Offers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart <span class="cart-count">0</span></a></li>
+      </ul>
+    </nav>
+    <div class="action-links">
+      <a href="menu.html" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="cart-section">
+    <h2>Your Order</h2>
+
+    <noscript><p style="text-align:center;">Please turn on JavaScript to place an order, or call us on +673 890 7816.</p></noscript>
+
+    <div id="cart-empty" class="cart-empty" style="display:none;">
+      <p>Your cart is empty.</p>
+      <a href="menu.html" class="btn btn-primary">Browse the Menu</a>
+    </div>
+
+    <div id="cart-content" class="cart-layout" style="display:none;">
+      <div class="cart-box">
+        <h3>Items</h3>
+        <div id="cart-items"></div>
+        <div class="cart-total-row"><span>Total</span><strong id="cart-total">$0.00</strong></div>
+        <p class="cart-note">Delivery fee, if any, will be confirmed by us.</p>
+        <button type="button" id="clear-cart" class="btn-link">Clear cart</button>
+      </div>
+
+      <form id="order-form" class="cart-box order-form" novalidate>
+        <h3>Your details</h3>
+
+        <label for="cust-name">Name</label>
+        <input type="text" id="cust-name" maxlength="80" autocomplete="name">
+
+        <label for="cust-phone">Phone number</label>
+        <input type="tel" id="cust-phone" maxlength="30" autocomplete="tel">
+
+        <label>Order type</label>
+        <div class="order-type">
+          <label><input type="radio" name="order-type" value="Delivery" checked> Delivery</label>
+          <label><input type="radio" name="order-type" value="Pickup"> Pickup</label>
+        </div>
+
+        <div id="address-wrap">
+          <label for="cust-address">Delivery address</label>
+          <textarea id="cust-address" rows="3" maxlength="300" autocomplete="street-address"></textarea>
+        </div>
+
+        <label for="cust-notes">Notes (optional)</label>
+        <textarea id="cust-notes" rows="2" maxlength="300"></textarea>
+
+        <div id="form-error" class="form-error" role="alert"></div>
+
+        <button type="submit" class="btn-whatsapp">Send Order on WhatsApp</button>
+        <p class="order-hint">This opens WhatsApp with your order ready to send. Your order is confirmed once we reply.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>Delivery orders: <a href="tel:+6738907816">+673 890 7816</a>
+       &nbsp;|&nbsp;
+       Feedback: <a href="tel:+6738152583">+673 815 2583</a></p>
+    <p>&copy; 2026 Wrap.Co. All Rights Reserved.</p>
+  </div>
+</footer>
+<script src="script.js?v=7" defer></script>
+</body>
+</html>
