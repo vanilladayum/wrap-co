@@ -2,7 +2,7 @@
 
 // Country code + number, no "+" and no spaces.
 // Change this if your WhatsApp number is different from your delivery number.
-var SHOP_WHATSAPP = "6738152583";
+var SHOP_WHATSAPP = "6738907816";
 
 // Product ids here must match the data-id on each "Add to Cart" button.
 var PRODUCTS = {
